@@ -1,4 +1,5 @@
 import React from "react";
+import { TypeAnimation } from "react-type-animation";
 
 const HomeCV = () => {
   return (
@@ -12,16 +13,29 @@ const HomeCV = () => {
           <div className="content hero">
             <div className="inner_content">
               <div className="image_wrap">
-                <img src="img/hero/img.jpg" alt="hero" />
+                <img src="img/hero/avatar.jpg" alt="hero" />
               </div>
               <div className="name_holder">
                 <h3>
-                  Alan <span>Michaelis</span>
+                  Hải <span>Long</span>
                 </h3>
               </div>
               <div className="text_typing">
                 <p>
                   I'm a <span className="arlo_tm_animation_text_word"></span>
+                  <TypeAnimation
+                    sequence={[
+                      "Freelancer", // Types 'One'
+                      2000, // Waits 2s
+                      "UI/UX Designer", // Deletes 'One' and types 'Two'
+                      2000, // Waits 2s
+                      "Web Developer" // Types 'Three' without deleting 'Two'
+                    ]}
+                    wrapper="span"
+                    cursor={true}
+                    repeat={Infinity}
+                    // style={{ fontSize: "2em", display: "inline-block" }}
+                  />
                 </p>
               </div>
             </div>

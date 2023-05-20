@@ -96,7 +96,7 @@ const About = () => {
                     </li>
                     <li>
                       <span>
-                        <label>FaceBook:</label> Nguyễn Đức Hải
+                        <label>FaceBook:</label> Nguyễn Đức Hải Long
                       </span>
                     </li>
                     <li>

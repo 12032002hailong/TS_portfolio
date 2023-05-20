@@ -116,7 +116,7 @@ const Project = () => {
         <div className="arlo_tm_services_wrap">
           <div className="container">
             <div className="arlo_tm_title_holder">
-              <h3>Amazing Project</h3>
+              <h3>Project</h3>
               <span>Các dự án đã hoàn thiện</span>
             </div>
             <div className="list_wrap">

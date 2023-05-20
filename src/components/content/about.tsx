@@ -2,6 +2,7 @@ import React from "react";
 import anh1 from "@/assets/img/about/1.jpeg";
 import myCV from "@/assets/CV Long Nguyễn Đức Hải - CV IT-TopCV.vn.pdf";
 import { TypeAnimation } from "react-type-animation";
+import logo550 from "@/assets/img/about/550x640.jpg";
 
 const About = () => {
   return (
@@ -20,11 +21,15 @@ const About = () => {
                   data-relative-input="true"
                 >
                   <div className="image layer" data-depth="0.1">
-                    <img src="img/about/550x640.jpg" alt="550x640" />
-                    <div className="inner" data-img-url={anh1}></div>
+                    <img src={logo550} alt="550x640" />
+                    <div
+                      className="inner"
+                      data-img-url={anh1}
+                      style={{ backgroundImage: `url(${anh1})` }}
+                    ></div>
                   </div>
                   <div className="border layer" data-depth="0.2">
-                    <img src="img/about/550x640.jpg" alt="550x640" />
+                    <img src={logo550} alt="550x640" />
                     <div className="inner"></div>
                   </div>
                 </div>

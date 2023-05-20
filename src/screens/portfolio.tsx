@@ -5,7 +5,7 @@ import RightPart from "../components/rightpart";
 import MoblieMenu from "../components/moblie/moblimenu";
 import { FloatButton } from "antd";
 const Portfolio = () => {
-  const [hideLeftPart, setHideLeftPart] = useState<boolean>(false);
+  const [showLeftPart, setShowLeftPart] = useState<boolean>(false);
   return (
     <div className="arlo_tm_wrapper_all">
       <div id="arlo_tm_popup_blog">
@@ -29,15 +29,15 @@ const Portfolio = () => {
       <div className="arlo_tm_content">
         {/* <!-- LEFTPART --> */}
         <LeftPart
-          hideLeftPart={hideLeftPart}
-          setHideLeftPart={setHideLeftPart}
+          showLeftPart={showLeftPart}
+          setShowLeftPart={setShowLeftPart}
         />
         {/* <!-- /LEFTPART --> */}
 
         {/* <!-- RIGHTPART --> */}
         <RightPart
-          hideLeftPart={hideLeftPart}
-          setHideLeftPart={setHideLeftPart}
+          showLeftPart={showLeftPart}
+          setShowLeftPart={setShowLeftPart}
         />
         {/* <!-- /RIGHTPART --> */}
 

@@ -2,15 +2,15 @@ import React from "react";
 import desktopLogo from "@/assets/img/logo/desktop-logo.png";
 
 interface IProps {
-  hideLeftPart: boolean;
-  setHideLeftPart: (value: boolean) => void;
+  showLeftPart: boolean;
+  setShowLeftPart: (value: boolean) => void;
 }
 
 const LeftPart = (props: IProps) => {
   return (
     <div
       className={
-        props.hideLeftPart === true
+        props.showLeftPart === true
           ? "arlo_tm_leftpart_wrap opened"
           : "arlo_tm_leftpart_wrap"
       }
@@ -73,14 +73,14 @@ const LeftPart = (props: IProps) => {
         </div>
         <a
           className={
-            props.hideLeftPart ? "arlo_tm_resize opened" : "arlo_tm_resize"
+            props.showLeftPart ? "arlo_tm_resize opened" : "arlo_tm_resize"
           }
           href="#"
-          onClick={() => props.setHideLeftPart(!props.hideLeftPart)}
+          onClick={() => props.setShowLeftPart(!props.showLeftPart)}
         >
           <i
             className={
-              props.hideLeftPart ? "xcon-angle-left opened" : "xcon-angle-left"
+              props.showLeftPart ? "xcon-angle-left opened" : "xcon-angle-left"
             }
           ></i>
         </a>

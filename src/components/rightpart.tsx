@@ -6,17 +6,17 @@ import Project from "./content/project";
 import Contact from "./content/contact";
 
 interface IProps {
-  hideLeftPart: boolean;
-  setHideLeftPart: (value: boolean) => void;
+  showLeftPart: boolean;
+  setShowLeftPart: (value: boolean) => void;
 }
 
 const RightPart = (props: IProps) => {
   return (
     <div
       className={
-        props.hideLeftPart === true
+        props.showLeftPart === true
           ? "arlo_tm_rightpart opened"
-          : "arlo_tm_rightpart"
+          : "arlo_tm_rightpart opened"
       }
     >
       <div className="rightpart_inner">

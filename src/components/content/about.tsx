@@ -3,10 +3,30 @@ import anh1 from "@/assets/img/about/1.jpeg";
 import myCV from "@/assets/CV Long Nguyễn Đức Hải - CV IT-TopCV.vn.pdf";
 import { TypeAnimation } from "react-type-animation";
 import logo550 from "@/assets/img/about/550x640.jpg";
+import { useRef, useEffect } from "react";
+import Parallax from "parallax-js";
 
 const About = () => {
+  const sceneEl = useRef(null);
+
+  useEffect(() => {
+    if (sceneEl && sceneEl.current) {
+      const parallaxInstance = new Parallax(sceneEl.current, {
+        relativeInput: true,
+        hoverOnly: true
+      });
+
+      parallaxInstance.enable();
+      return () => parallaxInstance.disable();
+    }
+  }, []);
+
   return (
-    <div className="arlo_tm_section relative" id="about">
+    <div
+      className="arlo_tm_section relative"
+      id="about"
+      style={{ paddingTop: 100 }}
+    >
       <div className="arlo_tm_about_wrapper_all">
         <div className="container">
           <div className="arlo_tm_title_holder">
@@ -17,10 +37,11 @@ const About = () => {
             <div className="author_wrap">
               <div className="leftbox">
                 <div
+                  ref={sceneEl}
                   className="about_image_wrap parallax"
                   data-relative-input="true"
                 >
-                  <div className="image layer" data-depth="0.1">
+                  <div className="image layer" data-depth="0.3">
                     <img src={logo550} alt="550x640" />
                     <div
                       className="inner"

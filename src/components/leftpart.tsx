@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import desktopLogo from "@/assets/img/logo/desktop-logo.png";
 
 interface IProps {
@@ -8,6 +8,20 @@ interface IProps {
 
 const LeftPart = (props: IProps) => {
   const [activeTab, setActiveTab] = useState<string>("home");
+
+  useEffect(() => {
+    const { hash } = window.location;
+
+    if (hash) {
+      const tab = hash.replace("#", "");
+      setActiveTab(tab);
+      const section = document.querySelector(`${hash}`);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  }, []);
+
   const handleClickTab = (
     tab: string,
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
@@ -17,6 +31,9 @@ const LeftPart = (props: IProps) => {
     const section = document.querySelector(`#${tab}`);
     if (section) {
       section.scrollIntoView({ behavior: "smooth", block: "start" });
+      // setTimeout(() => {
+      //   window.location.hash = tab;
+      // }, 1000);
     }
   };
 
